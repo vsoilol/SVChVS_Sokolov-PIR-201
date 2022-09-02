@@ -40,9 +40,9 @@ header {
 
 # Contacts Info
 * Cell: +375293053140
-* Email: [vsoilol1701@gmail.com](mailto:john@example.com)
-* Telegram: https://t.me/heruSokol
-* Github: https://github.com/vsoilol
+* Email: [vsoilol1701@gmail.com](mailto:vsoilol1701@gmail.com)
+* Telegram: [https://t.me/heruSokol](https://t.me/heruSokol)
+* Github: [https://github.com/vsoilol](https://github.com/vsoilol)
   
 &#8194;
 
