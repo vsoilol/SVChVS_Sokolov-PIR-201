@@ -303,3 +303,48 @@ code {
   hyphens: none;
 }
 
+@media only screen and (max-width: 1300px) {
+  .columns {
+    flex-direction: column;
+  }
+
+  .row {
+    margin: 0 0 25px 0;
+  }
+
+  .row:first-child {
+    margin: 0 0 25px 0;
+  }
+
+  .row:last-child {
+    margin: 25px 0 0 0;
+  }
+
+  .vl {
+    width: 100%;
+    height: 1px;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .header__container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-links {
+    margin: 7px 0 0 0;
+    text-align: center;
+  }
+
+  .header-content-full-name {
+    text-align: center;
+  }
+}
