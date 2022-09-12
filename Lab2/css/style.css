@@ -79,6 +79,69 @@ h6 {
 }
 /*--------------------*/
 
-.content {
+.wrapper{
   margin: 0px auto;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 23px;
+  letter-spacing: 0.5px;
 }
+
+.container {
+  padding: 40px 40px 0 40px;
+}
+
+.bold {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-image__item {
+  width: 155px;
+  height: 155px;
+  border-radius: 5px;
+}
+
+.header-content__container {
+  margin: 0 0 0 20px;
+}
+
+.header-content-full-name {
+  font-family: "Josefin Sans";
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: -0.3px;
+  color: #212121;
+  margin: 10px 0 0 0;
+}
+
+.header-links {
+  margin: 7px 0 0 5px;
+}
+.header-link {
+  color: #212121;
+}
+
+.link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link:active {
+  color: #212121;
+}
+
+.link:visited {
+  color: #212121;
+}
+
