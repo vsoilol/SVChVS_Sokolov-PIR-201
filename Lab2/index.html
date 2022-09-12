@@ -1,53 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>CV</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <title>CV</title>
-</head>
-
-<body>
-  <div class="wrapper">
-    <header>
-      <div class="header__container container">
-        <div class="header-image">
-          <img src="./img/profile.jpg" class="header-image__item" />
-        </div>
-        <div class="header-content__container">
-          <div class="header-content">
-            <div class="header-content-full-name">
-              <sapn class="full-name__text">Vladislav Sokolov</sapn>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="header__container container">
+          <div class="header-image">
+            <img src="./img/profile.jpg" class="header-image__item" />
+          </div>
+          <div class="header-content__container">
+            <div class="header-content">
+              <div class="header-content-full-name">
+                <sapn class="full-name__text">Vladislav Sokolov</sapn>
+              </div>
+              <nav class="header-links">
+                <div class="header-link">
+                  <span class="header-link__text">Cell:</span>
+                  <a class="header-link__link">+375293053140</a>
+                </div>
+                <div class="header-link">
+                  <span class="header-link__text">Email:</span>
+                  <a class="header-link__link">vsoilol1701@gmail.com</a>
+                </div>
+                <div class="header-link">
+                  <span class="header-link__text">Github:</span>
+                  <a
+                    class="header-link__link link"
+                    href="https://github.com/vsoilol"
+                    >https://github.com/vsoilol</a
+                  >
+                </div>
+                <div class="header-link">
+                  <span class="header-link__text">Telegram:</span>
+                  <a
+                    class="header-link__link link"
+                    href="https://t.me/SokolForever"
+                    >https://t.me/SokolForever</a
+                  >
+                </div>
+              </nav>
             </div>
-            <nav class="header-links">
-              <div class="header-link">
-                <span class="header-link__text">Cell:</span>
-                <a class="header-link__link">+375293053140</a>
-              </div>
-              <div class="header-link">
-                <span class="header-link__text">Email:</span>
-                <a class="header-link__link">vsoilol1701@gmail.com</a>
-              </div>
-              <div class="header-link">
-                <span class="header-link__text">Github:</span>
-                <a class="header-link__link link" href="https://github.com/vsoilol">https://github.com/vsoilol</a>
-              </div>
-              <div class="header-link">
-                <span class="header-link__text">Telegram:</span>
-                <a class="header-link__link link" href="https://t.me/SokolForever">https://t.me/SokolForever</a>
-              </div>
-            </nav>
           </div>
         </div>
-      </div>
-    </header>
-  </div>
-</body>
+      </header>
 
+      <main>
+        <div class="container">
+          <hr />
+          <div class="profile">
+            <div class="profile-title title">
+              <span class="profile-title__text">Profile</span>
+            </div>
+            <div class="profile-content text">
+              <span class="profile-content__text"
+                >I’m an enthusiastic, responsible and hard working IT person.
+                Being worked for different projects helped me to adopt to the
+                changes quickly and made me a mature team worker. I am able to
+                work well both in a team environment as well as using own
+                initiative. I am able to work well under pressure and adhere to
+                strict deadlines. Ready to learn new technologies and try new
+                areas in professional growth.</span
+              >
+            </div>
+          </div>
+          <hr />
+          <div class="columns">
+            <div class="row">
+              <div class="experience">
+                <div class="experience-title title">
+                  <span class="experience-title__text">Experience</span>
+                </div>
+                <div class="experience-content">
+                  <div class="experience-content-header">
+                    <div class="experience-content-header-period">
+                      <span class="period__text">January 2022 – Till Now</span>
+                    </div>
+                    <div class="experience-content-header-position">
+                      <span class="position__text"
+                        >Student, BRU university</span
+                      >
+                    </div>
+                  </div>
+                  <div class="experience-content-info">
+                    <div class="info-project mb-8">
+                      <span class="info-project__title bold">Project:</span>
+                      <span class="info-project__text text"
+                        >Website for generating educational programs.</span
+                      >
+                    </div>
+                    <div class="info-activities mb-8">
+                      <div class="info-activities-title mb-3">
+                        <span class="info-activities-title__text bold"
+                          >Activities:</span
+                        >
+                      </div>
+                      <ul class="info-activities-list list text">
+                        <li class="list__item">
+                          Design and implementation of DB tables structure;
+                        </li>
+                        <li class="list__item">
+                          Implementation of Mediator pattern and clean
+                          architecture;
+                        </li>
+                        <li class="list__item">
+                          Design and implementation of data access logic (EF)
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="info-github mb-8">
+                      <span class="info-github__title bold">Github:</span>
+                      <a
+                        href="https://github.com/vsoilol/department-automation"
+                        class="info-github__link link"
+                        >https://github.com/vsoilol/department-automation</a
+                      >
+                    </div>
+                    <div class="info-url mb-8">
+                      <span class="info-url__title bold">URL:</span>
+                      <a
+                        href="https://department-automation-angular.firebaseapp.com/"
+                        class="info-url__link link"
+                        >https://department-automation-angular.firebaseapp.com/</a
+                      >
+                    </div>
+                    <div class="info-technologies">
+                      <div class="info-technologies-title mb-3">
+                        <span class="info-technologies-title__text bold"
+                          >Technologies:</span
+                        >
+                      </div>
+                      <ul class="info-technologies-list list">
+                        <li class="list__item">
+                          Back-end: ASP.NET Core API, EF Core;
+                        </li>
+                        <li class="list__item">Front-end: Angular</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="experience-content mt-10">
+                  <div class="experience-content-header">
+                    <div class="experience-content-header-period">
+                      <span class="period__text">March 2021 – June 2021</span>
+                    </div>
+                    <div class="experience-content-header-position">
+                      <span class="position__text">Student, EPAM Systems</span>
+                    </div>
+                  </div>
+                  <div class="experience-content-info">
+                    <div class="info-project mb-8">
+                      <span class="info-project__title bold">Project:</span>
+                      <span class="info-project__text text"
+                        >Website for posting and storing recipes of
+                        dishes.</span
+                      >
+                    </div>
+                    <div class="info-activities mb-8">
+                      <div class="info-activities-title mb-3">
+                        <span class="info-activities-title__text bold"
+                          >Activities:</span
+                        >
+                      </div>
+                      <ul class="info-activities-list list text">
+                        <li class="list__item">
+                          Design and implementation of DB tables structure;
+                        </li>
+                        <li class="list__item">
+                          Design and implementation of data access logic
+                          (ADO.NET, EF);
+                        </li>
+                        <li class="list__item">
+                          Implementation of unit-tests for MVC application;
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="info-github mb-8">
+                      <span class="info-github__title bold">Github:</span>
+                      <a
+                        href="https://github.com/vsoilol/RecipeBook"
+                        class="info-github__link link"
+                        >https://github.com/vsoilol/RecipeBook</a
+                      >
+                    </div>
+                    <div class="info-technologies">
+                      <div class="info-technologies-title mb-3">
+                        <span class="info-technologies-title__text bold"
+                          >Technologies:</span
+                        >
+                      </div>
+                      <ul class="info-technologies-list list">
+                        <li class="list__item">
+                          Back-end: ASP.NET Core MVC, ADO.NET;
+                        </li>
+                        <li class="list__item">
+                          Front-end: ASP.NET Core Razor, Bootstrap 5
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="vl"></div>
+            <div class="row">
+              <div class="skills">
+                <div class="skills-title title">
+                  <span class="skills-title__text">Skills</span>
+                </div>
+                <div class="skills-content">
+                  <div class="skills-content__item">
+                    <span class="bold italic">Primary Skill</span>
+                    –
+                    <span
+                      >development on Microsoft Platform (.NET, .NET
+                      Core).</span
+                    >
+                  </div>
+                  <div class="skills-content__item">
+                    <span class="bold italic">Secondary</span>
+                    –
+                    <span>development on Angular (v.12).</span>
+                  </div>
+                </div>
+              </div>
+              <div class="additional-Information mt-10">
+                <div class="additional-Information-title title">
+                  <span class="additional-Information-title__text"
+                    >Additional Information</span
+                  >
+                </div>
+                <div class="additional-Information-content">
+                  <div class="additional-Information-content__item">
+                    <span class="bold italic">English Level</span>
+                    –
+                    <span>Pre-Intermediate (A2).</span>
+                  </div>
+                </div>
+              </div>
+              <div class="completed-courses mt-10">
+                <div class="completed-courses-title title">
+                  <span class="completed-courses-title__text"
+                    >Completed courses</span
+                  >
+                </div>
+                <ul class="list">
+                  <li class="list__item italic">
+                    ASP.NET Core: March 2021 – June 2021, EPAM Systems
+                  </li>
+                </ul>
+              </div>
+              <div class="code mt-10">
+                <div class="code-title title">
+                  <span class="code-title__text">Code</span>
+                </div>
+                <pre><code class="language-C#">using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+  
+namespace DepartmentAutomation.Web.Controllers
+{
+   [ApiController]
+   public abstract class ApiControllerBase : ControllerBase
+   {
+      private ISender _mediator = null!;
+  
+      protected ISender Mediator => _mediator 
+                  ??= HttpContext.RequestServices.GetRequiredService&lt;ISender&gt;();
+    }
+}
+</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+    </div>
+  </body>
 </html>
