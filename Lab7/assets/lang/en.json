@@ -1,0 +1,84 @@
+{
+  "header.home": "Home",
+  "header.ourProducts": "Our Products",
+  "header.blog": "Blog",
+  "header.about": "About",
+  "header.contact": "Contact",
+  "header.styleguide": "Styleguide",
+  "header.cart": "Cart",
+
+  "mainBlock.additionalTitle1": "Our Products",
+  "mainBlock.additionalTitle2": "Best place to buy design",
+  "mainBlock.title": "Coffee Mugs",
+  "mainBlock.subTitle": "The most versatile furniture system ever created. Designed to fit your life, made to move and grow.",
+  "mainBlock.buttonText": "Explore Our Products",
+
+  "descriptionBlock.title": "Even the all-powerful Pointing has no control about the blind texts.",
+  "descriptionBlock.text": "It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.",
+  "descriptionBlock.buttonText": "Read the full Story",
+
+  "featuredMugs.title": "Featured Mugs",
+
+  "button.ExploreMug": "Explore Mug",
+  "button.OnSale": "On Sale.",
+
+  "featuredMugs.card1.title": "Pink Premium Ceramic",
+  "featuredMugs.card2.title": "Golden Designers Mug",
+
+  "moreProductsBlock.title": "More Products",
+
+  "moreProductsBlock.card1.title": "Red Love Cup",
+  "moreProductsBlock.card2.title": "Black Tea Cup",
+  "moreProductsBlock.card3.title": "B&W Essentials Mug",
+  "moreProductsBlock.card4.title": "Winter Style Mug",
+  "moreProductsBlock.card5.title": "Ceramic Tea",
+  "moreProductsBlock.card6.title": "No Handle Bar Cup",
+  "moreProductsBlock.card7.title": "Espresso Cup by Mugs.co",
+  "moreProductsBlock.card8.title": "Pink Premium Ceramic",
+  "moreProductsBlock.card9.title": "Summer Designer Cup",
+
+  "shoppingInfo.title": "Buy 2 mugs and get a coffee magazine free",
+
+  "contentShoppingInfo.subTitle": "Premium Offer",
+  "contentShoppingInfo.title": "Get our Coffee Magazine",
+  "contentShoppingInfo.description": "The most versatile furniture system ever created. Designed to fit your life.",
+  "contentShoppingInfo.button": "Start Shopping",
+
+  "newsBlock.title": "Behind the mugs, lifestyle stories",
+
+  "cardNews.button": "Read the Full Story",
+  "cardNews.date": "October 9, 2018",
+
+  "cardNews.card1.title": "Health Check: why do I get a headache when I haven’t had my coffee?",
+  "cardNews.card1.description": "It is a paradisematic country, in which roasted parts of sentences fly into your mouth.",
+
+  "cardNews.card2.title": "How long does a cup of coffee keep you awake?",
+  "cardNews.card2.description": "It is a paradisematic country, in which roasted parts. Vel qui et ad voluptatem.",
+
+  "cardNews.card3.title": "Recent research suggests that heavy coffee drinkers may reap health benefits.",
+  "cardNews.card3.description": "It is a paradisematic country, in which roasted parts of sentences fly into your mouth.",
+
+  "signUpBlock.subTitle": "Sign up and get free coffee bags",
+  "signUpBlock.title": "Coffee Updates",
+  "signUpBlock.input": "customer @coffestyle.io",
+  "signUpBlock.button": "subscribe",
+
+  "footer.description": "Delivering the best coffee life since 1996. From coffee geeks to the real ones.",
+  "footer.companyInfo": "CoffeeStyle Inc. © 1996",
+
+  "footer.menu.title": "Menu",
+  "footer.menu.home": "Home",
+  "footer.menu.ourProducts": "Our Products",
+  "footer.menu.about": "About",
+  "footer.menu.contact": "Contact",
+  "footer.menu.styleguide": "Styleguide",
+
+  "footer.followUs.title": "Follow Us",
+  "footer.followUs.home": "Facebook",
+  "footer.followUs.ourProducts": "Instagram",
+  "footer.followUs.about": "Pinterest",
+  "footer.followUs.contact": "Twitter",
+
+  "footer.contactUs.title": "Contact Us",
+  "footer.contactUs.description": "We’re Always Happy to Help"
+}
