@@ -1866,6 +1866,7 @@ body {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding-right: 50px;
   font-size: 0.875rem;
   line-height: 1.5714285714;
   color: rgba(29, 31, 46, 0.7);
