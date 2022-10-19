@@ -1,0 +1,84 @@
+{
+  "header.home": "Домой",
+  "header.ourProducts": "Наши товары",
+  "header.blog": "Блог",
+  "header.about": "О нас",
+  "header.contact": "Контакты",
+  "header.styleguide": "Стиль",
+  "header.cart": "Корзина",
+
+  "mainBlock.additionalTitle1": "Наши продукты",
+  "mainBlock.additionalTitle2": "Лучшее место для покупки дизайна",
+  "mainBlock.title": "Кофейные кружки",
+  "mainBlock.subTitle": "Самая универсальная модель мебели из когда-либо созданных. Спроектирована с учетом особенностей вашей жизни, создана для движения и роста.",
+  "mainBlock.buttonText": "Исследуйте наши продукты",
+
+  "descriptionBlock.title": "Даже всемогущая Точка не властна над слепыми текстами.",
+  "descriptionBlock.text": "Это райская страна, в которой жареные части предложений летят вам в рот. Даже всемогущая Точка не властен над слепыми текстами - это почти неорфографическая жизнь Однажды, однако, маленькая строчка слепого текста по имени Lorem Ipsum решила отправиться в далекий мир грамматики.",
+  "descriptionBlock.buttonText": "Читать рассказ полностью",
+
+  "featuredMugs.title": "Рекомендуемые Кружки",
+
+  "button.ExploreMug": "Исследуйте кружку",
+  "button.OnSale": "В продаже.",
+
+  "featuredMugs.card1.title": "Розовая премиальная керамика",
+  "featuredMugs.card2.title": "Золотая Дизайнерская кружка",
+
+  "moreProductsBlock.title": "Больше продуктов",
+
+  "moreProductsBlock.card1.title": "Красная чашка любви",
+  "moreProductsBlock.card2.title": "Чашка Черного Чая",
+  "moreProductsBlock.card3.title": "Кружка B&W Essentials",
+  "moreProductsBlock.card4.title": "Кружка зимнего стиля",
+  "moreProductsBlock.card5.title": "Керамический чай",
+  "moreProductsBlock.card6.title": "Без ручки чашка",
+  "moreProductsBlock.card7.title": "Чашка эспрессо от Mugs.co",
+  "moreProductsBlock.card8.title": "Розовая Керамика Премиум-класса",
+  "moreProductsBlock.card9.title": "Летняя Дизайнерская чашка",
+
+  "shoppingInfo.title": "Купите 2 кружки и получите кофейный журнал бесплатно",
+
+  "contentShoppingInfo.subTitle": "Премиум предложение",
+  "contentShoppingInfo.title": "Возьмите наш Кофейный журнал",
+  "contentShoppingInfo.description": "Самая универсальная мебельная система, когда-либо созданная. Разработанный, чтобы соответствовать вашей жизни.",
+  "contentShoppingInfo.button": "Начать покупки",
+
+  "newsBlock.title": "За кружками истории об образе жизни",
+
+  "cardNews.button": "Прочитайте полную историю",
+  "cardNews.date": "9 октября 2018",
+
+  "cardNews.card1.title": "Проверка здоровья: почему у меня болит голова, когда я не выпил свой кофе?",
+  "cardNews.card1.description": "Это райская страна, в которой жареные части предложений сами летят вам в рот.",
+
+  "cardNews.card2.title": "Как долго чашка кофе не дает вам уснуть?",
+  "cardNews.card2.description": "Это райская страна, в которой жарят куски мяса. Вел себя тихо до сладострастия.",
+
+  "cardNews.card3.title": "Недавние исследования показывают, что те, кто много пьет кофе, могут извлечь пользу для здоровья.",
+  "cardNews.card3.description": "Это райская страна, в которой жареные части предложений сами летят вам в рот.",
+
+  "signUpBlock.subTitle": "Зарегистрируйтесь и получите бесплатные пакетики кофе",
+  "signUpBlock.title": "Кофейные обновления",
+  "signUpBlock.input": "клиент @coffeestyle.io",
+  "signUpBlock.button": "подписываться",
+
+  "footer.description": "Обеспечивая лучшую кофейную жизнь с 1996 года. От любителей кофе до настоящих.",
+  "footer.companyInfo": "CoffeeStyle Inc. © 1996",
+
+  "footer.menu.title": "Меню",
+  "footer.menu.home": "Домой",
+  "footer.menu.ourProducts": "Наши продукты",
+  "footer.menu.about": "Про нас",
+  "footer.menu.contact": "Контакты",
+  "footer.menu.styleguide": "Руководство по стилю",
+
+  "footer.followUs.title": "следуйте за нами",
+  "footer.followUs.home": "Facebook",
+  "footer.followUs.ourProducts": "Instagram",
+  "footer.followUs.about": "Pinterest",
+  "footer.followUs.contact": "Twitter",
+
+  "footer.contactUs.title": "Наши контакты",
+  "footer.contactUs.description": "Мы всегда рады помочь"
+}
