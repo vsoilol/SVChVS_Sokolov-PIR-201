@@ -1807,3 +1807,99 @@ body {
 .form-sign-up__input {
   width: 40%;
 }
+
+@supports (
+  padding-top: clamp(2.5rem, 0.7089552239rem + 8.9552238806vw, 6.25rem)
+) {
+  .footer {
+    padding-top: clamp(2.5rem, 0.7089552239rem + 8.9552238806vw, 6.25rem);
+  }
+}
+
+@supports not (
+  padding-top: clamp(2.5rem, 0.7089552239rem + 8.9552238806vw, 6.25rem)
+) {
+  .footer {
+    padding-top: calc(2.5rem + 3.75 * (100vw - 20rem) / 41.875);
+  }
+}
+
+@supports (
+  padding-bottom: clamp(2.5rem, 0.7089552239rem + 8.9552238806vw, 6.25rem)
+) {
+  .footer {
+    padding-bottom: clamp(2.5rem, 0.7089552239rem + 8.9552238806vw, 6.25rem);
+  }
+}
+
+@supports not (
+  padding-bottom: clamp(2.5rem, 0.7089552239rem + 8.9552238806vw, 6.25rem)
+) {
+  .footer {
+    padding-bottom: calc(2.5rem + 3.75 * (100vw - 20rem) / 41.875);
+  }
+}
+
+.footer__body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 34.0425531915% 1fr 1fr 1fr;
+  grid-template-columns: 34.0425531915% 1fr 1fr 1fr;
+}
+
+.column-company {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.column-company__logo {
+  font-size: 1.125rem;
+  margin-bottom: 0.8333333333em;
+}
+
+.column-company__description {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5714285714;
+  color: rgba(29, 31, 46, 0.7);
+}
+
+.column-company__info {
+  font-size: 0.875rem;
+  line-height: 1.5714285714;
+  color: rgba(29, 31, 46, 0.3);
+}
+
+.column-footer__title {
+  margin-bottom: 1.5625rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+.column-footer__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.column-footer__item {
+  font-size: 0.8125rem;
+  color: rgba(29, 31, 46, 0.7);
+}
+
+.column-footer__email {
+  margin-top: 1.25rem;
+  font-size: 1.4375rem;
+}
