@@ -780,4 +780,12 @@
       ],
     },
   ];
+
+  const keyboardBlock = document.querySelector(".keyboard");
+  const textareaInput = document.querySelector("#editing");
+  const stickyKeysWithoutShiftValue = ["Shift", "Alt", "Ctrl"];
+  const capsLockValue = "Caps Lock";
+
+  var currentLanguage = localStorage.getItem("lang");
+  if (!currentLanguage) currentLanguage = "en";
 })();
