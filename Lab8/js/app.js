@@ -216,4 +216,66 @@
       paginationButtons.generatePaginationButtonContainer(null, null, 1);
     else paginationButtons.generatePaginationButtonContainer(null, null, 5);
   });
+
+  async function getImages(search, page = 1, isPaginationUpdate = true) {
+    imagesBlock.innerHTML = spinnerHtml;
+    paginationBlock.style.display = "none";
+    const method =
+      search && search.length > 0
+        ? "flickr.photos.search"
+        : "flickr.photos.getRecent";
+
+    // lcp --proxyUrl https://www.flickr.com
+
+    const localUrl = "http://localhost:8010";
+    const server = `${localUrl}/proxy/services/rest/?method=${method}&`;
+    const params = `api_key=bd3ed38c503f674c4cd0ab70f1e29807&text=${search}&format=json&nojsoncallback=true&per_page=12&page=${page}`;
+    const response = await fetch(server + params, {
+      method: "GET",
+    });
+    if (response.ok) {
+      const responseResult = await response.json();
+      checkPagination(isPaginationUpdate, responseResult.photos.pages, search);
+      setData(responseResult);
+    } else
+      imagesBlock.innerHTML = `<div class="images-data-items">\n\t\t\t\t\t\t\t\t\t\t<span class="images-data-items__message">Ошибка при получении данных</span>\n\t\t\t\t\t\t\t\t\t</div>`;
+  }
+
+  function setData(data) {
+    const photos = data.photos;
+    let html = `<div class="images-data-items">`;
+    if (0 === photos.total) {
+      html += `<span class="images-data-items__message">Нету данных</span>`;
+      html += "</div>";
+      imagesBlock.innerHTML = html;
+      return;
+    }
+    if (0 === photos.photo.length) {
+      html += `<span class="images-data-items__message">На данной странице нету изображений</span>`;
+      html += "</div>";
+      imagesBlock.innerHTML = html;
+      paginationBlock.style.display = "flex";
+      return;
+    }
+    data.photos.photo.forEach((element) => {
+      if ("0" !== element.server) {
+        const imageUrl = `http://farm${element.farm}.staticflickr.com/${element.server}/${element.id}_${element.secret}.jpg`;
+        html += `<article class="images-data__card card-image">\n  \t\t\t\t\t<div class="card-image__image">\n  \t\t\t\t\t\t<div data-img-container class="card-image__image-ibg">\n  \t\t\t\t\t\t\t<img\n  \t\t\t\t\t\t\t\tsrc="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="\n  \t\t\t\t\t\t\t\tclass="lazy"\n  \t\t\t\t\t\t\t\tdata-src="${imageUrl}"\n  \t\t\t\t\t\t\t\talt="image">\n  \t\t\t\t\t\t</div>\n  \t\t\t\t\t</div>\n  \t\t\t\t\t<div class="card-image__title">\n  \t\t\t\t\t\t<span>${element.title}</span>\n  \t\t\t\t\t</div>\n  \t\t\t\t</article>`;
+      }
+    });
+    html += "</div>";
+    imagesBlock.innerHTML = html;
+    paginationBlock.style.display = "flex";
+    lazyLoad();
+  }
+
+  function checkPagination(isPaginationUpdate, newPages, search) {
+    if (!isPaginationUpdate) return;
+    newPages = newPages >= 100 ? 99 : newPages;
+    pages = newPages;
+    paginationButtons.generatePaginationButtonContainer(pages, 1);
+    paginationButtons.onChange((e) => {
+      getImages(search, e.target.value, false);
+    });
+  }
 })();
