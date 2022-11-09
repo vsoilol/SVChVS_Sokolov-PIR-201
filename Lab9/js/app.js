@@ -1177,4 +1177,14 @@
       myField.value.substring(0, startPos) + myValue
     ).length;
   }
+
+  window.addEventListener("blur", (event) => {
+    const keys = document.querySelectorAll(".key");
+    keys.forEach((_) => {
+      if ("Alt" === _.dataset.withoutShiftValue) removeActiveClassToButton(_);
+      _.removeAttribute("is-keyboard-click");
+      _.removeAttribute("is-button-click");
+      _.removeAttribute("is-caps");
+    });
+  });
 })();
