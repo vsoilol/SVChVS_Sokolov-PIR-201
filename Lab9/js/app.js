@@ -1029,4 +1029,152 @@
     textareaInput.selectionStart = textareaInput.selectionStart + 1;
     textareaInput.selectionEnd = textareaInput.selectionStart;
   }
+
+  const fragment = document.createDocumentFragment();
+  const keys = keyValues.find((_) => _.lang === currentLanguage).keys;
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    const keyContainer = document.createElement("div");
+    keyContainer.className = "keyboard__key key";
+    keyContainer.setAttribute("data-key-code", key.code);
+    keyContainer.setAttribute("data-is-letter", key.isLetter);
+    keyContainer.setAttribute("data-shift-value", key.shiftKey);
+    keyContainer.setAttribute("data-without-shift-value", key.key);
+    setKetEventListeners(keyContainer);
+    if (key.shiftKey) {
+      const shiftKey = document.createElement("span");
+      shiftKey.className = "key__shift";
+      shiftKey.innerText = key.shiftKey;
+      const withoutShiftKey = document.createElement("span");
+      withoutShiftKey.className = "without-shift";
+      withoutShiftKey.innerText = key.isLetter
+        ? key.key.toLowerCase()
+        : key.key;
+      keyContainer.appendChild(shiftKey);
+      keyContainer.appendChild(withoutShiftKey);
+    } else
+      keyContainer.innerText = key.isLetter ? key.key.toLowerCase() : key.key;
+    fragment.appendChild(keyContainer);
+  }
+  keyboardBlock.appendChild(fragment);
+
+  function setKetEventListeners(key) {
+    key.addEventListener("mousedown", keyMouseDown);
+    key.addEventListener("mouseup", keyMouseUp);
+    key.addEventListener("mouseout", keyMouseOut);
+  }
+
+  function keyMouseDown(e) {
+    const container = e.target.closest(".key");
+    addActiveClassToButtonWithStickyButton(container);
+    switch (container.dataset.withoutShiftValue) {
+      case "Tab":
+        insertTab();
+        break;
+
+      case "Caps Lock":
+      case "Shift":
+      case "Ctrl":
+      case "Alt":
+      case "Win":
+        break;
+
+      case "":
+        insertWhiteSpaces();
+        break;
+
+      case "Enter":
+        insertEnter();
+        break;
+
+      case "Del":
+        deleteClick();
+        break;
+
+      case "Backspace":
+        backspaceClick();
+        break;
+
+      case "↑":
+        cursorMoveUp();
+        break;
+
+      case "←":
+        cursorMoveLeft();
+        break;
+
+      case "↓":
+        cursorMoveDown();
+        break;
+
+      case "→":
+        cursorMoveRight();
+        break;
+
+      default:
+        const isLetter = "true" === container.dataset.isLetter;
+        let value;
+        if (isLetter)
+          value = isUppercaseLetters()
+            ? container.dataset.withoutShiftValue
+            : container.dataset.withoutShiftValue.toLowerCase();
+        else
+          value = isShiftClick()
+            ? container.dataset.shiftValue
+            : container.dataset.withoutShiftValue;
+        insertAtCursor(textareaInput, value);
+        break;
+    }
+  }
+
+  function keyMouseUp(e) {
+    const container = e.target.closest(".key");
+    removeActive(container);
+  }
+
+  function keyMouseOut(e) {
+    if (
+      e.target.classList.contains("active") &&
+      !isStickyKey(e.target.dataset.withoutShiftValue) &&
+      e.target.dataset.withoutShiftValue !== capsLockValue
+    )
+      removeActive(e.target);
+  }
+
+  function removeActive(keyContainer) {
+    const withoutShiftValue = keyContainer.dataset.withoutShiftValue;
+    if (
+      isStickyKey(withoutShiftValue) &&
+      !keyContainer.hasAttribute("is-button-click")
+    )
+      getAllButtonsByWithoutShiftValue(withoutShiftValue).forEach((_) => {
+        _.setAttribute("is-button-click", "");
+      });
+    else
+      keyboardBlock.querySelectorAll(`[is-button-click]`).forEach((_) => {
+        _.removeAttribute("is-button-click");
+      });
+    if (
+      isStickyKey(withoutShiftValue) &&
+      !keyContainer.hasAttribute("is-button-click")
+    )
+      if (isChangeLanguage()) changeLanguage();
+    if (withoutShiftValue === capsLockValue)
+      !keyContainer.hasAttribute("is-caps")
+        ? keyContainer.setAttribute("is-caps", "")
+        : keyContainer.removeAttribute("is-caps");
+    removeActiveClassToStickyButtons(keyContainer);
+  }
+
+  function insertAtCursor(myField, myValue) {
+    var startPos = myField.selectionStart;
+    var endPos = myField.selectionEnd;
+    myField.value =
+      myField.value.substring(0, startPos) +
+      myValue +
+      myField.value.substring(endPos, myField.value.length);
+    myField.selectionEnd = (
+      myField.value.substring(0, startPos) + myValue
+    ).length;
+  }
 })();
