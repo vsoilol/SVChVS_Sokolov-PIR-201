@@ -802,4 +802,20 @@
       _.innerHTML = _.dataset.withoutShiftValue.toLowerCase();
     });
   }
+
+  function addActiveClassToButton(key) {
+    textareaInput.focus();
+    key.classList.add("active");
+  }
+
+  function removeActiveClassToButton(key) {
+    if (key.classList.contains("active")) {
+      key.classList.remove("active");
+      key.classList.add("remove");
+      setTimeout(() => {
+        key.classList.remove("remove");
+      }, 200);
+    }
+    textareaInput.focus();
+  }
 })();
