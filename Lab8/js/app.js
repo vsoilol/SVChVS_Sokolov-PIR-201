@@ -201,4 +201,19 @@
       this.#onChangeFunction = handler;
     };
   }
+
+  var pages = 0;
+  var paginationButtons = new PaginationButton(3, 5);
+  paginationButtons.render();
+
+  const paginationScrenSize = window.matchMedia("(max-width: 400px)");
+
+  if (paginationScrenSize.matches)
+    paginationButtons.generatePaginationButtonContainer(null, null, 1);
+
+  window.matchMedia("(max-width: 400px)").addEventListener("change", (e) => {
+    if (e.matches)
+      paginationButtons.generatePaginationButtonContainer(null, null, 1);
+    else paginationButtons.generatePaginationButtonContainer(null, null, 5);
+  });
 })();
