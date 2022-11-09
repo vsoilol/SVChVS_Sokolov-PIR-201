@@ -818,4 +818,47 @@
     }
     textareaInput.focus();
   }
+
+  function addActiveClassToButtonWithStickyButton(container) {
+    const withoutShiftValue = container.dataset.withoutShiftValue;
+    if (isStickyKey(withoutShiftValue)) {
+      keyboardBlock
+        .querySelectorAll(`[data-without-shift-value="${withoutShiftValue}"]`)
+        .forEach((_) => addActiveClassToButton(_));
+      isUppercaseLetters() ? setBigLetters() : setSmallLetters();
+      return;
+    }
+    addActiveClassToButton(container);
+  }
+
+  function removeActiveClassToStickyButtons(keyContainer) {
+    const withoutShiftValue = keyContainer.dataset.withoutShiftValue;
+    if (isStickyKey(withoutShiftValue))
+      keyboardBlock
+        .querySelectorAll(
+          `:not([is-caps]).active:not([is-button-click]).active`
+        )
+        .forEach((_) => {
+          removeActiveClassToButton(_);
+        });
+    if (!isStickyKey(withoutShiftValue))
+      keyboardBlock
+        .querySelectorAll(
+          `:not([is-caps]).active:not([is-keyboard-click]).active`
+        )
+        .forEach((_) => {
+          removeActiveClassToButton(_);
+        });
+    isUppercaseLetters() ? setBigLetters() : setSmallLetters();
+  }
+
+  function getAllButtonsByWithoutShiftValue(value) {
+    return keyboardBlock.querySelectorAll(
+      `[data-without-shift-value="${value}"]`
+    );
+  }
+
+  function isStickyKey(value) {
+    return stickyKeysWithoutShiftValue.includes(value);
+  }
 })();
