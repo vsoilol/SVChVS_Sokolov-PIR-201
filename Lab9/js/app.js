@@ -861,4 +861,61 @@
   function isStickyKey(value) {
     return stickyKeysWithoutShiftValue.includes(value);
   }
+
+  function isUppercaseLetters() {
+    const isCaps = keyboardBlock.querySelector("[is-caps]") ? true : false;
+    const isShift = keyboardBlock.querySelector(
+      '[data-without-shift-value="Shift"].active'
+    )
+      ? true
+      : false;
+    return isCaps ^ isShift;
+  }
+
+  function isShiftClick() {
+    return keyboardBlock.querySelector(
+      '[data-without-shift-value="Shift"].active'
+    )
+      ? true
+      : false;
+  }
+
+  function isChangeLanguage() {
+    return (
+      keyboardBlock.querySelector(
+        '[data-without-shift-value="Shift"].active'
+      ) &&
+      keyboardBlock.querySelector('[data-without-shift-value="Alt"].active')
+    );
+  }
+
+  function changeLanguage() {
+    const keys = keyValues.find((_) => _.lang !== currentLanguage);
+    currentLanguage = keys.lang;
+    localStorage.setItem("lang", currentLanguage);
+    for (let i = 0; i < keys.keys.length; i++) {
+      const key = keys.keys[i];
+      const keyContainer = keyboardBlock.querySelector(
+        `[data-key-code="${key.code}"]`
+      );
+      keyContainer.setAttribute("data-key-code", key.code);
+      keyContainer.setAttribute("data-is-letter", key.isLetter);
+      keyContainer.setAttribute("data-shift-value", key.shiftKey);
+      keyContainer.setAttribute("data-without-shift-value", key.key);
+      keyContainer.innerHTML = "";
+      if (key.shiftKey) {
+        const shiftKey = document.createElement("span");
+        shiftKey.className = "key__shift";
+        shiftKey.innerText = key.shiftKey;
+        const withoutShiftKey = document.createElement("span");
+        withoutShiftKey.className = "without-shift";
+        withoutShiftKey.innerText = key.isLetter
+          ? key.key.toLowerCase()
+          : key.key;
+        keyContainer.appendChild(shiftKey);
+        keyContainer.appendChild(withoutShiftKey);
+      } else
+        keyContainer.innerText = key.isLetter ? key.key.toLowerCase() : key.key;
+    }
+  }
 })();
