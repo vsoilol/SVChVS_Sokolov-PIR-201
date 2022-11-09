@@ -1,6 +1,37 @@
 (() => {
   "use strict";
 
+  function lazyLoad() {
+    const imageSpinnerHtml = `<div class="spinner spinner_image">\n\t\t\t\t\t\t\t\t\t </div>`;
+    var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+    if ("IntersectionObserver" in window) {
+      let lazyImageObserver = new IntersectionObserver(function (
+        entries,
+        observer
+      ) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            let lazyImage = entry.target;
+            lazyImage.style.visibility = "hidden";
+            const container = lazyImage.closest("[data-img-container]");
+            container.insertAdjacentHTML("beforeend", imageSpinnerHtml);
+            lazyImage.onload = function () {
+              const spinner = container.querySelector(".spinner");
+              container.removeChild(spinner);
+              lazyImage.style.visibility = "visible";
+            };
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.classList.remove("lazy");
+            lazyImageObserver.unobserve(lazyImage);
+          }
+        });
+      });
+      lazyImages.forEach(function (lazyImage) {
+        lazyImageObserver.observe(lazyImage);
+      });
+    }
+  }
+
   const imagesBlock = document.querySelector("#imagesData");
   const paginationBlock = document.querySelector(".pagination");
   const spinnerHtml = `<div class="spinner-container">\n\t\t\t\t\t\t\t\t<div class="spinner">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>`;
