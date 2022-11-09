@@ -303,4 +303,18 @@
       e.preventDefault();
     }
   }
+
+  document.addEventListener("keypress", keypressActions);
+  function keypressActions(e) {
+    keypressEnterSearchInput(e);
+  }
+  function keypressEnterSearchInput(e) {
+    if (e.target.closest(".input__field") && "Enter" === e.key) {
+      const input = e.target;
+      const searchString = input.value;
+      getImages(searchString);
+      e.preventDefault();
+    }
+  }
+  if (imagesBlock) getImages("");
 })();
