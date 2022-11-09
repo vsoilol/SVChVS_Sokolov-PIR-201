@@ -1198,4 +1198,23 @@
       });
     addActiveClassToButtonWithStickyButton(key);
   });
+
+  window.addEventListener("keyup", function (e) {
+    const key = document.querySelector(`[data-key-code=${e.code}]`);
+    const withoutShiftValue = key.dataset.withoutShiftValue;
+    if (isStickyKey(withoutShiftValue)) {
+      getAllButtonsByWithoutShiftValue(withoutShiftValue).forEach((_) => {
+        _.removeAttribute("is-keyboard-click");
+      });
+      keyboardBlock.querySelectorAll(`[is-button-click]`).forEach((_) => {
+        _.removeAttribute("is-button-click");
+      });
+    }
+    if (withoutShiftValue === capsLockValue)
+      !key.hasAttribute("is-caps")
+        ? key.setAttribute("is-caps", "")
+        : key.removeAttribute("is-caps");
+    if (isChangeLanguage()) changeLanguage();
+    removeActiveClassToStickyButtons(key);
+  });
 })();
