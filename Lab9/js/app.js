@@ -1187,4 +1187,15 @@
       _.removeAttribute("is-caps");
     });
   });
+
+  window.addEventListener("keydown", function (e) {
+    if (9 === e.which || "AltLeft" === e.code) e.preventDefault();
+    const key = document.querySelector(`[data-key-code=${e.code}]`);
+    const withoutShiftValue = key.dataset.withoutShiftValue;
+    if (isStickyKey(withoutShiftValue))
+      getAllButtonsByWithoutShiftValue(withoutShiftValue).forEach((_) => {
+        _.setAttribute("is-keyboard-click", "");
+      });
+    addActiveClassToButtonWithStickyButton(key);
+  });
 })();
