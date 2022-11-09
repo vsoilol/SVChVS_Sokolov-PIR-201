@@ -788,4 +788,18 @@
 
   var currentLanguage = localStorage.getItem("lang");
   if (!currentLanguage) currentLanguage = "en";
+
+  function setBigLetters() {
+    var keys = keyboardBlock.querySelectorAll(`[data-is-letter="true"]`);
+    keys.forEach((_) => {
+      _.innerHTML = _.dataset.withoutShiftValue;
+    });
+  }
+
+  function setSmallLetters() {
+    var keys = keyboardBlock.querySelectorAll(`[data-is-letter="true"]`);
+    keys.forEach((_) => {
+      _.innerHTML = _.dataset.withoutShiftValue.toLowerCase();
+    });
+  }
 })();
