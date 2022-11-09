@@ -918,4 +918,115 @@
         keyContainer.innerText = key.isLetter ? key.key.toLowerCase() : key.key;
     }
   }
+
+  if (textareaInput) {
+    textareaInput.addEventListener("keydown", (event) => {
+      check_tab(event.target, event);
+    });
+  }
+
+  function check_tab(element, event) {
+    element.value;
+    if ("Tab" == event.key) {
+      event.preventDefault();
+      insertTab();
+    }
+  }
+  function insertTab() {
+    let code = textareaInput.value;
+    let before_tab = code.slice(0, textareaInput.selectionStart);
+    let after_tab = code.slice(textareaInput.selectionEnd, code.length);
+    let cursor_pos = textareaInput.selectionStart + 1;
+    textareaInput.value = before_tab + "\t" + after_tab;
+    textareaInput.selectionStart = cursor_pos;
+    textareaInput.selectionEnd = cursor_pos;
+  }
+  function insertWhiteSpaces() {
+    let code = textareaInput.value;
+    let before_tab = code.slice(0, textareaInput.selectionStart);
+    let after_tab = code.slice(textareaInput.selectionEnd, code.length);
+    let cursor_pos = textareaInput.selectionStart + 1;
+    textareaInput.value = before_tab + " " + after_tab;
+    textareaInput.selectionStart = cursor_pos;
+    textareaInput.selectionEnd = cursor_pos;
+  }
+  function insertEnter() {
+    let code = textareaInput.value;
+    let before_tab = code.slice(0, textareaInput.selectionStart);
+    let after_tab = code.slice(textareaInput.selectionEnd, code.length);
+    let cursor_pos = textareaInput.selectionStart + 1;
+    textareaInput.value = before_tab + "\n" + after_tab;
+    textareaInput.selectionStart = cursor_pos;
+    textareaInput.selectionEnd = cursor_pos;
+  }
+  function deleteClick() {
+    let code = textareaInput.value;
+    let before_tab = code.slice(0, textareaInput.selectionStart);
+    let after_tab = code.slice(textareaInput.selectionEnd + 1, code.length);
+    let cursor_pos = textareaInput.selectionStart;
+    textareaInput.value = before_tab + after_tab;
+    textareaInput.selectionStart = cursor_pos;
+    textareaInput.selectionEnd = cursor_pos;
+  }
+  function backspaceClick() {
+    let code = textareaInput.value;
+    let before_tab = code.slice(0, textareaInput.selectionStart - 1);
+    let after_tab = code.slice(textareaInput.selectionEnd, code.length);
+    let cursor_pos = textareaInput.selectionStart - 1;
+    textareaInput.value = before_tab + after_tab;
+    textareaInput.selectionStart = cursor_pos;
+    textareaInput.selectionEnd = cursor_pos;
+  }
+  function cursorMoveUp() {
+    let cursor_pos = textareaInput.selectionStart;
+    let text = textareaInput.value;
+    const strings = text.split("\n");
+    const cursorRow = text.substr(0, cursor_pos).split("\n").length;
+    const cursorCurrentTextStart =
+      strings.slice(0, cursorRow - 1).join("").length + cursorRow - 1;
+    const rowStartToCursorPosition = cursor_pos - cursorCurrentTextStart;
+    let newCursorPosition =
+      strings.slice(0, cursorRow - 2).join("").length +
+      cursorRow -
+      2 +
+      rowStartToCursorPosition;
+    if (
+      strings[cursorRow - 2] &&
+      rowStartToCursorPosition > strings[cursorRow - 2].length
+    )
+      newCursorPosition = strings.slice(0, cursorRow - 1).join("").length;
+    if (1 === cursorRow) newCursorPosition = 0;
+    textareaInput.selectionStart = newCursorPosition;
+    textareaInput.selectionEnd = newCursorPosition;
+  }
+  function cursorMoveDown() {
+    let cursor_pos = textareaInput.selectionStart;
+    let text = textareaInput.value;
+    const strings = text.split("\n");
+    const cursorRow = text.substr(0, cursor_pos).split("\n").length;
+    const cursorCurrentTextStart =
+      strings.slice(0, cursorRow - 1).join("").length + cursorRow - 1;
+    const rowStartToCursorPosition = cursor_pos - cursorCurrentTextStart;
+    let newCursorPosition =
+      strings.slice(0, cursorRow).join("").length +
+      cursorRow +
+      rowStartToCursorPosition;
+    if (
+      strings[cursorRow] &&
+      rowStartToCursorPosition > strings[cursorRow].length
+    )
+      newCursorPosition =
+        strings.slice(0, cursorRow + 1).join("").length + cursorRow;
+    if (cursorRow === strings.length) newCursorPosition = text.length;
+    textareaInput.selectionStart = newCursorPosition;
+    textareaInput.selectionEnd = newCursorPosition;
+  }
+  function cursorMoveLeft() {
+    textareaInput.selectionStart = textareaInput.selectionStart;
+    textareaInput.selectionEnd = textareaInput.selectionStart - 1;
+  }
+  function cursorMoveRight() {
+    textareaInput.selectionStart = textareaInput.selectionStart + 1;
+    textareaInput.selectionEnd = textareaInput.selectionStart;
+  }
 })();
