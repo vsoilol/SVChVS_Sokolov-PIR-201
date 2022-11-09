@@ -278,4 +278,29 @@
       getImages(search, e.target.value, false);
     });
   }
+
+  document.addEventListener("click", documentActions);
+  function documentActions(e) {
+    searchButtonClick(e);
+    clearButtonClick(e);
+  }
+  function searchButtonClick(e) {
+    if (e.target.closest(".form-images-search__button")) {
+      const input = document.querySelector(".input__field");
+      const searchString = input.value;
+      getImages(searchString);
+      e.preventDefault();
+    }
+  }
+  function clearButtonClick(e) {
+    if (e.target.closest(".input__clear")) {
+      const input = document.querySelector(".input__field");
+      if (input.value && input.value.length > 0) {
+        input.value = "";
+        getImages("");
+        input.focus();
+      }
+      e.preventDefault();
+    }
+  }
 })();
