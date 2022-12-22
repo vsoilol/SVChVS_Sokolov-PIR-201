@@ -1,0 +1,82 @@
+@use "sass:math";
+@import "src/styles/base/mixins";
+@import "src/styles/variables";
+
+$mobileLoginPage: rem(460);
+
+.login-page {
+  flex: 1 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    padding: 0 rem(33);
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+    position: relative;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap", 50, 30);
+  }
+
+  &__server-error {
+    position: absolute;
+    text-align: center;
+    color: red;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: -20%;
+    @include adaptiveValue("font-size", 20, 15);
+  }
+
+  &__section {
+  }
+
+  &__submit-button {
+    @include adaptiveValue("font-size", 20, 15);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: rem(20);
+  }
+
+  .login-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: rem(10);
+
+    &__label {
+      @include adaptiveValue("font-size", 20, 14);
+      letter-spacing: 0.1em;
+    }
+
+    &__error {
+      position: absolute;
+      top: 105%;
+      color: red;
+      @include adaptiveValue("font-size", 15, 12);
+    }
+
+    &__input {
+      border: 2px solid #000000;
+      background: transparent;
+      padding: rem(13) rem(10);
+      @include adaptiveValue("font-size", 20, 14);
+
+      &::placeholder {
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+}
