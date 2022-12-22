@@ -1,0 +1,53 @@
+@import "../../styles/variables";
+@import "../../styles/base/mixins";
+
+.footer {
+  background-color: $backgroundColor;
+  color: white;
+  padding: em(30, 15) 0;
+  font-size: rem(15);
+
+  &__contacts {
+  }
+
+  &__container {
+  }
+}
+
+.contacts-footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: rem(15);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: rem(20);
+    font-weight: 700;
+    letter-spacing: rem(5);
+  }
+}
+
+.list-contacts {
+  &__info_link {
+    transition: color 0.5s ease 0s;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.752);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    gap: rem(10);
+    letter-spacing: rem(2);
+  }
+
+  &__title {
+  }
+}
