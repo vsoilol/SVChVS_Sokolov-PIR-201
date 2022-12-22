@@ -1,0 +1,104 @@
+@import "src/styles/variables";
+@import "src/styles/base/mixins";
+
+.card {
+  cursor: pointer;
+  padding: em(20, 14);
+  border-radius: 5px;
+
+  background-color: #fff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  transition: box-shadow 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &_selected {
+   // border: 2px solid #000;
+    position: relative;
+
+    &:after{
+      content: "";
+      position: absolute;
+      border-radius: 5px;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.13);
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+
+  @media (min-width: rem(350)) {
+    width: 75%;
+  }
+
+  @media (min-width: rem(600)) {
+    width: 44%;
+  }
+
+  @media (min-width: rem(730)) {
+    width: 36%;
+  }
+
+  @media (min-width: rem(860)) {
+    width: 30%;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(8);
+    margin-top: rem(15);
+  }
+
+  &__buttons {
+    margin-top: rem(15);
+  }
+
+  &__image-ibg {
+    padding-bottom: percent(255, 260);
+  }
+
+  &__price {
+  }
+
+  &__quantity {
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: rem(17);
+    letter-spacing: rem(2);
+  }
+}
+
+.buttons-card {
+  display: flex;
+  flex-direction: row;
+  gap: rem(10);
+  width: 100%;
+
+  &__button {
+    z-index: 3;
+    flex: 1 0 auto;
+
+    font-weight: 600;
+    font-size: rem(14);
+    padding: rem(8) 0;
+  }
+
+  &__edit {
+  }
+
+  &__remove {
+  }
+}
