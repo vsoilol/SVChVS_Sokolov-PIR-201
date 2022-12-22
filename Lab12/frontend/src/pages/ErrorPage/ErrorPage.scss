@@ -1,0 +1,37 @@
+@import "src/styles/variables";
+@import "src/styles/base/mixins";
+
+.page{
+  display: flex;
+  flex-direction: column;
+}
+
+.error-route-page{
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: rem(30);
+  }
+
+  &__title{
+    @include adaptiveValue("font-size", 40, 30);
+    font-weight: 700;
+  }
+
+  &__link{
+    transition: color 0.5s ease 0s;
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.55);
+    }
+  }
+}

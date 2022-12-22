@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+@import "../../styles/base/mixins";
+
+.footer {
+  background-color: $backgroundColor;
+  color: white;
+  padding: em(30, 15) 0;
+  font-size: rem(15);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link{
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: color 0.5s ease 0s;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.752);
+    }
+  }
+}
